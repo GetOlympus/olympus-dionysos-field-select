@@ -2,8 +2,8 @@
 
 namespace GetOlympus\Field;
 
-use GetOlympus\Hera\Controllers\Field;
-use GetOlympus\Hera\Controllers\Translate;
+use GetOlympus\Hera\Field\Controller\Field;
+use GetOlympus\Hera\Translate\Controller\Translate;
 
 /**
  * Builds Select field.
@@ -42,7 +42,7 @@ class Select extends Field
         // Build defaults
         $defaults = [
             'id' => '',
-            'title' => Translate::t('select.title'),
+            'title' => Translate::t('select.title', [], 'selectfield'),
             'default' => '',
             'description' => '',
             'options' => [],
@@ -53,7 +53,7 @@ class Select extends Field
             'template' => 'pages',
 
             // texts
-            't_no_options' => Translate::t('select.no_options'),
+            't_no_options' => Translate::t('select.no_options', [], 'selectfield'),
         ];
 
         // Build defaults data
