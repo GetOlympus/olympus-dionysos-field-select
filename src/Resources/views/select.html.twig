@@ -1,12 +1,10 @@
-{% set twigtpl = template and template == 'terms' ? 'terms' : 'pages' %}
-
-{% extends "@template/Layouts/Extends/" ~ twigtpl ~ ".html.twig" %}
+{% extends template_path %}
 
 {% block id %}{{ id }}_select{% endblock %}
 {% block label %}<label for="{{ id }}">{{ title|raw }}</label>{% endblock %}
 
 {% block field %}
-    <div class="olz-field-content select">
+    <div class="olh-field-content select">
         {% if options %}
             <select name="{{ id }}" id="{{ id }}">
                 {% for key, option in options if key %}
@@ -17,7 +15,9 @@
         {% else %}
             {{ t_no_options }}
         {% endif %}
-
-        {% if description %}<p class="olz-description">{{ description|raw }}</p>{% endif %}
     </div>
+{% endblock %}
+
+{% block description %}
+    {{ description|raw }}
 {% endblock %}

@@ -20,22 +20,20 @@ use GetOlympus\Hera\Translate\Controller\Translate;
 class Select extends Field
 {
     /**
-     * @var string
+     * Prepare variables.
      */
-    protected $faIcon = 'fa-list';
-
-    /**
-     * @var string
-     */
-    protected $template = 'select.html.twig';
+    protected function setVars()
+    {
+        $this->getModel()->setFaIcon('fa-list');
+        $this->getModel()->setStyle('css'.S.'select.css');
+        $this->getModel()->setTemplate('select.html.twig');
+    }
 
     /**
      * Prepare HTML component.
      *
      * @param array $content
      * @param array $details
-     *
-     * @since 0.0.1
      */
     protected function getVars($content, $details = [])
     {
@@ -47,11 +45,6 @@ class Select extends Field
             'description' => '',
             'options' => [],
 
-            // details
-            'post' => 0,
-            'prefix' => '',
-            'template' => 'pages',
-
             // texts
             't_no_options' => Translate::t('select.no_options', [], 'selectfield'),
         ];
@@ -60,9 +53,9 @@ class Select extends Field
         $vars = array_merge($defaults, $content);
 
         // Retrieve field value
-        $vars['val'] = $this->getValue($details, $vars['default'], $content['id']);
+        $vars['val'] = $this->getValue($content['id'], $details, $vars['default']);
 
         // Update vars
-        $this->getField()->setVars($vars);
+        $this->getModel()->setVars($vars);
     }
 }
