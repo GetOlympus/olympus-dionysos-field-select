@@ -6,7 +6,7 @@
 {% block field %}
     <div class="olh-field-content select">
         {% if options %}
-            <select name="{{ id }}" id="{{ id }}">
+            <select name="{{ name }}" id="{{ id }}">
                 {% for key, option in options if key %}
                     {% set selected = key == val ? true : false %}
                     <option value="{{ key == '-1' ? '' : key }}"{{ selected ? ' selected="selected"' : '' }}>{{ option }}</option>

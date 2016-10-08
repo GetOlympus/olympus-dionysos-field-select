@@ -10,6 +10,15 @@
 @blue: #1297e0;
 
 .olh-field-content {
+    select {
+        max-width: 100%;
+        width: 546px;
+    }
+
+    select[multiple] option:checked {
+        background-color: fade(@blue, 25%);
+    }
+
     .selectize-dropdown {
         &.single {
             background: @white;
