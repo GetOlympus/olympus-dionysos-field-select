@@ -1,8 +1,8 @@
 {
   "name": "getolympus/olympus-select-field",
   "type": "olympus-field",
-  "description": "[READ-ONLY] Select field, this component is a part of the Olympus Zeus Core framework.",
-  "keywords": ["olympus", "zeus", "field", "select", "framework", "php"],
+  "description": "Select / Multiselect field, this component is a part of the Olympus Zeus Core framework.",
+  "keywords": ["olympus-zeus", "select", "field", "custom", "multiselect", "framework", "php", "wordpress"],
   "homepage": "https://github.com/GetOlympus/olympus-select-field",
   "license": "MIT",
   "authors": [
