@@ -1,0 +1,6 @@
+{
+    "select.title": "Select",
+    "select.keyboard": "Press the <kbd>CTRL</kbd> or <kbd>CMD</kbd> button to select more than one option.",
+
+    "select.errors.no_options": "The field does no have any options."
+}

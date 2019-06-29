@@ -1,23 +1,28 @@
 {% extends template_path %}
 
-{% block id %}{{ id }}_select{% endblock %}
-{% block label %}<label for="{{ id }}">{{ title|raw }}</label>{% endblock %}
+{% block id %}{{ identifier }}{% endblock %}
+{% block label %}<label for="{{ identifier }}">{{ title|raw }}</label>{% endblock %}
 
 {% block field %}
-    <div class="olh-field-content select">
+    <div class="olz-field select">
+        <input type="hidden" name="{{ name }}" value="" />
+
         {% if options %}
-            <select name="{{ name }}" id="{{ id }}">
-                {% for key, option in options if key %}
-                    {% set selected = key == val ? true : false %}
-                    <option value="{{ key == '-1' ? '' : key }}"{{ selected ? ' selected="selected"' : '' }}>{{ option }}</option>
+            {% set fieldname = name ~ (multiple ? '[]' : '') %}
+            {% set fieldopts = multiple ? ' size="5" multiple="true"' : '' %}
+
+            <select name="{{ fieldname }}" id="{{ identifier }}"{{ fieldopts }}>
+                {% for k, opt in options if k %}
+                    {% set selected = k in value ? true : false %}
+                    <option value="{{ k == '-1' ? '' : k }}"{{ selected ? ' selected="selected"' : '' }}>{{ opt }}</option>
                 {% endfor %}
             </select>
         {% else %}
-            {{ t_no_options }}
+            {{ t_no_options|raw }}
         {% endif %}
     </div>
 {% endblock %}
 
 {% block description %}
-    {{ description|raw }}
+    {{ description|raw }}{% if multiple %}<br/>{{ t_keyboard|raw }}{% endif %}
 {% endblock %}

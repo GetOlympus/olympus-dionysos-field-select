@@ -20,42 +20,53 @@ use GetOlympus\Zeus\Translate\Controller\Translate;
 class Select extends Field
 {
     /**
-     * Prepare variables.
+     * @var string
      */
-    protected function setVars()
-    {
-        $this->getModel()->setFaIcon('fa-list');
-        $this->getModel()->setStyle('css'.S.'select.css');
-        $this->getModel()->setTemplate('select.html.twig');
-    }
+    protected $template = 'select.html.twig';
 
     /**
-     * Prepare HTML component.
-     *
-     * @param array $content
-     * @param array $details
+     * @var string
      */
-    protected function getVars($content, $details = [])
+    protected $textdomain = 'selectfield';
+
+    /**
+     * Prepare defaults.
+     *
+     * @return array
+     */
+    protected function getDefaults()
     {
-        // Build defaults
-        $defaults = [
-            'id' => '',
-            'title' => Translate::t('select.title', [], 'selectfield'),
+        return [
+            'title' => Translate::t('select.title', $this->textdomain),
             'default' => '',
             'description' => '',
+            'multiple' => false,
             'options' => [],
 
             // texts
-            't_no_options' => Translate::t('select.no_options', [], 'selectfield'),
+            't_keyboard' => Translate::t('select.keyboard', $this->textdomain),
+            't_no_options' => Translate::t('select.errors.no_options', $this->textdomain),
         ];
+    }
 
-        // Build defaults data
-        $vars = array_merge($defaults, $content);
+    /**
+     * Prepare variables.
+     *
+     * @param  object  $value
+     * @param  array   $contents
+     *
+     * @return array
+     */
+    protected function getVars($value, $contents)
+    {
 
-        // Retrieve field value
-        $vars['val'] = $this->getValue($content['id'], $details, $vars['default']);
+        // Get contents
+        $vars = $contents;
+
+        // Update value
+        $vars['value'] = !is_array($value) ? [$value] : $value;
 
         // Update vars
-        $this->getModel()->setVars($vars);
+        return $vars;
     }
 }

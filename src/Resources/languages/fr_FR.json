@@ -1,0 +1,6 @@
+{
+    "select.title": "Select",
+    "select.keyboard": "Appuyez la touche <kbd>CTRL</kbd> ou <kbd>CMD</kbd> pour choisir plusieurs options.",
+
+    "select.errors.no_options": "Le champ ne contient aucune option."
+}
