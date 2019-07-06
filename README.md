@@ -33,15 +33,17 @@ return \GetOlympus\Field\Select::build('my_select_field_id', [
     ],
 
     /**
-     * Texts definitions
-     * @see the `Texts definitions` section below
+     * Texts definition
+     * @see the `Texts definition` section below
      */
     't_keyboard'   => 'Press the <kbd>CTRL</kbd> or <kbd>CMD</kbd> button to select more than one option.',
     't_no_options' => 'The field does no have any options.',
 ]);
+```
 
+```php
 // Multiple choice version
-return \GetOlympus\Field\Radio::build('my_multiselect_field_id', [
+return \GetOlympus\Field\Select::build('my_multiselect_field_id', [
     'title'        => 'What are your preferred personas?',
     'default'      => ['minions', 'lapinscretins'],
     'description'  => 'The White House needs your feedback asap!',
@@ -55,17 +57,17 @@ return \GetOlympus\Field\Radio::build('my_multiselect_field_id', [
     ],
 
     /**
-     * Texts definitions
-     * @see the `Texts definitions` section below
+     * Texts definition
+     * @see the `Texts definition` section below
      */
     't_keyboard'   => 'Press the <kbd>CTRL</kbd> or <kbd>CMD</kbd> button to select more than one option.',
     't_no_options' => 'The field does no have any options.',
 ]);
 ```
 
-## Variables definitions
+## Variables definition
 
-The variable definition depends on `multiple` value:
+The variables definition depends on `multiple` value:
 - set to `false`, a uniq string value is stored in Database
 - set to `true`, an array of key values is stored in Database
 
@@ -91,7 +93,7 @@ In all cases:
 | `default`     | String  | *empty array* | Array with options keys |
 | `multiple`    | Boolean | `true` | *nothing else* |
 
-## Texts definitions
+## Texts definition
 
 | Code | Default value | Definition |
 | ---- | ------------- | ---------- |
