@@ -1,29 +1,168 @@
-# Select Field ![For Olympus](https://img.shields.io/badge/for-Olympus-44cc11.svg?style=flat-square) ![For WordPress](https://img.shields.io/badge/for-WordPress-00aadc.svg?style=flat-square) ![CodeFactor grade](https://www.codefactor.io/repository/github/GetOlympus/olympus-select-field/badge?style=flat-square)
+# Select Field
+> This component is a part of the [**Olympus Zeus Core**][zeus-url] **WordPress** framework.  
+> It uses the default WordPress select or multiselect field.
 
-_This component is a part of the [**Olympus Zeus Core**](https://github.com/GetOlympus/Zeus-Core) **WordPress** framework._  
-_It uses the default WordPress select or multiselect field._  
+[![Olympus Component][olympus-image]][olympus-url]
+[![CodeFactor Grade][codefactor-image]][codefactor-url]
+[![Packagist Version][packagist-image]][packagist-url]
+
+## Installation
+
+Using `composer` in your PHP project:
+
+```sh
+composer install getolympus/olympus-select-field
+```
+
+## Field initialization
+
+Use the following lines to add a `select field` in your **WordPress** admin pages or custom post type meta fields:
+
+```php
+// Uniq choice version
+return \GetOlympus\Field\Select::build('my_select_field_id', [
+    'title'        => 'Select a Minion that you may know',
+    'default'      => 'kevin',
+    'description'  => 'A very important question! Pay attention to it ;)',
+    'multiple'     => false,
+    'options'      => [
+        'kevin'     => 'Kevin',
+        'mel'       => 'Mel',
+        'dave'      => 'Dave',
+        'bob'       => 'Bob',
+    ],
+
+    /**
+     * Texts definitions
+     * @see the `Texts definitions` section below
+     */
+    't_keyboard'   => 'Press the <kbd>CTRL</kbd> or <kbd>CMD</kbd> button to select more than one option.',
+    't_no_options' => 'The field does no have any options.',
+]);
+
+// Multiple choice version
+return \GetOlympus\Field\Radio::build('my_multiselect_field_id', [
+    'title'        => 'What are your preferred personas?',
+    'default'      => ['minions', 'lapinscretins'],
+    'description'  => 'The White House needs your feedback asap!',
+    'multiple'     => true,
+    'options'      => [
+        'minions'       => 'The Minions',
+        'lapinscretins' => 'The Lapins Crétins',
+        'marvel'        => 'All Marvel Superheroes',
+        'franklin'      => 'Franklin (everything is possible)',
+        'spongebob'     => 'Spongebob (nothing to say... Love it!)',
+    ],
+
+    /**
+     * Texts definitions
+     * @see the `Texts definitions` section below
+     */
+    't_keyboard'   => 'Press the <kbd>CTRL</kbd> or <kbd>CMD</kbd> button to select more than one option.',
+    't_no_options' => 'The field does no have any options.',
+]);
+```
+
+## Variables definitions
+
+The variable definition depends on `multiple` value:
+- set to `false`, a uniq string value is stored in Database
+- set to `true`, an array of key values is stored in Database
+
+In all cases:
+
+| Variable      | Type    | Default value if not set | Accepted values |
+| ------------- | ------- | ------------------------ | --------------- |
+| `title`       | String  | `'Radio button'` | *empty* |
+| `description` | String  | *empty* | *empty* |
+| `options`     | Array   | *empty* | Array with a key/value options |
+
+### Uniq choice
+
+| Variable      | Type    | Default value if not set | Accepted values |
+| ------------- | ------- | ------------------------ | --------------- |
+| `default`     | String  | *empty string* | One of the options keys |
+| `multiple`    | Boolean | `false` | *nothing else* |
+
+### Multiple choices
+
+| Variable      | Type    | Default value if not set | Accepted values |
+| ------------- | ------- | ------------------------ | --------------- |
+| `default`     | String  | *empty array* | Array with options keys |
+| `multiple`    | Boolean | `true` | *nothing else* |
+
+## Texts definitions
+
+| Code | Default value | Definition |
+| ---- | ------------- | ---------- |
+| `t_keyboard` | Press the <kbd>CTRL</kbd> or <kbd>CMD</kbd><br/>button to select more than one<br/>option. | Used as a notice to help users to user multiselect field |
+| `t_no_options` | The field does no have any options. | Used as an error in the case no options have been set |
+
+## Retrive data
+
+Retrieve your value from Database with a simple `get_option('my_select_field_id', '')` or `get_option('my_multiselect_field_id', [])` (see [WordPress reference][getoption-url]):
+
+```php
+// Get select from Database
+$select = get_option('my_select_field_id', '');
+
+// Display value
+echo '<h2><b>'.$select.'</b>, master of the ceremony</h2>';
+
+// Get multiselect from Database
+$multiselect = get_option('my_multiselect_field_id', []);
+
+if (!empty($multiselect)) {
+    echo '<p>And the nominees are:</p>';
+    echo '<ul>';
+
+    foreach ($multiselect as $value) {
+        echo '<li>'.$value.'</li>'; // Will display key item options!
+    }
+
+    echo '</ul>';
+}
+```
+
+## Release History
+
+* 0.0.8
+- [x] ADD: new version compatible with Zeus-Core latest version
+
+## Authors and Copyright
+
+Achraf Chouk  
+[![@crewstyle][twitter-image]][twitter-url]
+
+Please, read [LICENSE][license-blob] for more information.  
+[![MIT][license-image]][license-url]
+
+[https://github.com/crewstyle](https://github.com/crewstyle)  
+[http://fr.linkedin.com/in/achrafchouk](http://fr.linkedin.com/in/achrafchouk)
+
+## Contributing
+
+1. Fork it (<https://github.com/GetOlympus/olympus-select-field/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
 
 ---
 
-### Resources
+**Built with ♥ by [Achraf Chouk](http://github.com/crewstyle "Achraf Chouk") ~ (c) since a long time.**
 
-  + [Documentation](https://olympus.readme.io/v1.0/docs/select-field)
-  + [Report issues](https://github.com/GetOlympus/olympus-select-field/issues)
-  + [Olympus Zeus Core](https://github.com/GetOlympus/Zeus-Core)
-
----
-
-### Authors and Copyright
-
-**Achraf Chouk**
-
-+ http://fr.linkedin.com/in/achrafchouk/
-+ http://twitter.com/crewstyle
-+ http://github.com/crewstyle
-
-Please, read [LICENSE](https://github.com/GetOlympus/olympus-select-field/blob/master/LICENSE "LICENSE") for more details.  
-[![MIT](https://img.shields.io/badge/license-MIT_License-blue.svg?style=flat-square)](http://opensource.org/licenses/MIT "MIT")  
-
----
-
-**Built with ♥ by [Achraf Chouk](http://github.com/crewstyle "Achraf Chouk") ~ (c) since 2016.**
+<!-- links & imgs dfn's -->
+[olympus-image]: https://img.shields.io/badge/for-Olympus-44cc11.svg?style=flat-square
+[olympus-url]: https://github.com/GetOlympus
+[zeus-url]: https://github.com/GetOlympus/Zeus-Core
+[codefactor-image]: https://www.codefactor.io/repository/github/GetOlympus/olympus-select-field/badge?style=flat-square
+[codefactor-url]: https://www.codefactor.io/repository/github/getolympus/olympus-select-field
+[getoption-url]: https://developer.wordpress.org/reference/functions/get_option/
+[license-blob]: https://github.com/GetOlympus/olympus-select-field/blob/master/LICENSE
+[license-image]: https://img.shields.io/badge/license-MIT_License-blue.svg?style=flat-square
+[license-url]: http://opensource.org/licenses/MIT
+[packagist-image]: https://img.shields.io/packagist/v/getolympus/olympus-select-field.svg?style=flat-square
+[packagist-url]: https://packagist.org/packages/getolympus/olympus-select-field
+[twitter-image]: https://img.shields.io/badge/crewstyle-blue.svg?style=social&logo=twitter
+[twitter-url]: http://twitter.com/crewstyle
