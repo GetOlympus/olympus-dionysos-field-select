@@ -25,15 +25,15 @@ Use the following lines to add a `select field` in your **WordPress** admin page
 ```php
 // Uniq choice version
 return \GetOlympus\Field\Select::build('my_select_field_id', [
-    'title'        => 'Select a Minion that you may know',
-    'default'      => 'kevin',
-    'description'  => 'A very important question! Pay attention to it ;)',
-    'multiple'     => false,
-    'options'      => [
-        'kevin'     => 'Kevin',
-        'mel'       => 'Mel',
-        'dave'      => 'Dave',
-        'bob'       => 'Bob',
+    'title'       => 'Select a Minion that you may know',
+    'default'     => 'kevin',
+    'description' => 'A very important question! Pay attention to it ;)',
+    'multiple'    => false,
+    'options'     => [
+        'kevin' => 'Kevin',
+        'mel'   => 'Mel',
+        'dave'  => 'Dave',
+        'bob'   => 'Bob',
     ],
 
     /**
@@ -48,11 +48,11 @@ return \GetOlympus\Field\Select::build('my_select_field_id', [
 ```php
 // Multiple choice version
 return \GetOlympus\Field\Select::build('my_multiselect_field_id', [
-    'title'        => 'What are your preferred personas?',
-    'default'      => ['minions', 'lapinscretins'],
-    'description'  => 'The White House needs your feedback asap!',
-    'multiple'     => true,
-    'options'      => [
+    'title'       => 'What are your preferred personas?',
+    'default'     => ['minions', 'lapinscretins'],
+    'description' => 'The White House needs your feedback asap!',
+    'multiple'    => true,
+    'options'     => [
         'minions'       => 'The Minions',
         'lapinscretins' => 'The Lapins Crétins',
         'marvel'        => 'All Marvel Superheroes',
