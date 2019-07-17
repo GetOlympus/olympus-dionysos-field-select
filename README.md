@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="https://img.icons8.com/nolan/2x/numbered-list.png">
+</p>
+
 # Select Field
 > This component is a part of the [**Olympus Zeus Core**][zeus-url] **WordPress** framework.  
 > It uses the default WordPress select or multiselect field.
@@ -11,7 +15,7 @@
 Using `composer` in your PHP project:
 
 ```sh
-composer install getolympus/olympus-select-field
+composer require getolympus/olympus-select-field
 ```
 
 ## Field initialization
@@ -128,6 +132,12 @@ if (!empty($multiselect)) {
 
 ## Release History
 
+* 0.0.10
+- [x] FIX: remove twig dependency from composer
+
+* 0.0.9
+- [x] FIX: remove zeus-core dependency from composer
+
 * 0.0.8
 - [x] ADD: new version compatible with Zeus-Core latest version
 
@@ -139,8 +149,8 @@ Achraf Chouk
 Please, read [LICENSE][license-blob] for more information.  
 [![MIT][license-image]][license-url]
 
-[https://github.com/crewstyle](https://github.com/crewstyle)  
-[http://fr.linkedin.com/in/achrafchouk](http://fr.linkedin.com/in/achrafchouk)
+<https://github.com/crewstyle>  
+<https://fr.linkedin.com/in/achrafchouk>
 
 ## Contributing
 
