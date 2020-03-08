@@ -1,22 +1,18 @@
-<p align="center">
-    <img src="https://img.icons8.com/nolan/2x/numbered-list.png">
-</p>
-
-# Select Field
-> This component is a part of the [**Olympus Zeus Core**][zeus-url] **WordPress** framework.  
+# Dionysos Select Field
+> This component is a part of the **Olympus Dionysos fields** for **WordPress**.  
 > It uses the default WordPress select or multiselect field.
 
 [![Olympus Component][olympus-image]][olympus-url]
 [![CodeFactor Grade][codefactor-image]][codefactor-url]
 [![Packagist Version][packagist-image]][packagist-url]
 
-## Installation
-
-Using `composer` in your PHP project:
-
 ```sh
-composer require getolympus/olympus-select-field
+composer require getolympus/olympus-dionysos-field-select
 ```
+
+<p align="center">
+    <img src="https://github.com/GetOlympus/olympus-dionysos-field-select/blob/master/assets/field-select-64.png" />
+</p>
 
 ## Field initialization
 
@@ -24,7 +20,7 @@ Use the following lines to add a `select field` in your **WordPress** admin page
 
 ```php
 // Uniq choice version
-return \GetOlympus\Field\Select::build('my_select_field_id', [
+return \GetOlympus\Dionysos\Field\Select::build('my_select_field_id', [
     'title'       => 'Select a Minion that you may know',
     'default'     => 'kevin',
     'description' => 'A very important question! Pay attention to it ;)',
@@ -47,7 +43,7 @@ return \GetOlympus\Field\Select::build('my_select_field_id', [
 
 ```php
 // Multiple choice version
-return \GetOlympus\Field\Select::build('my_multiselect_field_id', [
+return \GetOlympus\Dionysos\Field\Select::build('my_multiselect_field_id', [
     'title'       => 'What are your preferred personas?',
     'default'     => ['minions', 'lapinscretins'],
     'description' => 'The White House needs your feedback asap!',
@@ -132,14 +128,15 @@ if (!empty($multiselect)) {
 
 ## Release History
 
-* 0.0.10
-- [x] FIX: remove twig dependency from composer
+0.0.11
+- New Olympus components compatibility
+- Change repository to be a part of Dionysos fields
 
-* 0.0.9
-- [x] FIX: remove zeus-core dependency from composer
+0.0.10
+- FIX: remove twig dependency from composer
 
-* 0.0.8
-- [x] ADD: new version compatible with Zeus-Core latest version
+0.0.9
+- FIX: remove zeus-core dependency from composer
 
 ## Authors and Copyright
 
@@ -154,7 +151,7 @@ Please, read [LICENSE][license-blob] for more information.
 
 ## Contributing
 
-1. Fork it (<https://github.com/GetOlympus/olympus-select-field/fork>)
+1. Fork it (<https://github.com/GetOlympus/olympus-dionysos-field-select/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
@@ -162,19 +159,19 @@ Please, read [LICENSE][license-blob] for more information.
 
 ---
 
-**Built with ♥ by [Achraf Chouk](http://github.com/crewstyle "Achraf Chouk") ~ (c) since a long time.**
+**Built with ♥ by [Achraf Chouk](https://github.com/crewstyle "Achraf Chouk") ~ (c) since a long time.**
 
 <!-- links & imgs dfn's -->
 [olympus-image]: https://img.shields.io/badge/for-Olympus-44cc11.svg?style=flat-square
 [olympus-url]: https://github.com/GetOlympus
 [zeus-url]: https://github.com/GetOlympus/Zeus-Core
-[codefactor-image]: https://www.codefactor.io/repository/github/GetOlympus/olympus-select-field/badge?style=flat-square
-[codefactor-url]: https://www.codefactor.io/repository/github/getolympus/olympus-select-field
+[codefactor-image]: https://www.codefactor.io/repository/github/GetOlympus/olympus-dionysos-field-select/badge?style=flat-square
+[codefactor-url]: https://www.codefactor.io/repository/github/getolympus/olympus-dionysos-field-select
 [getoption-url]: https://developer.wordpress.org/reference/functions/get_option/
-[license-blob]: https://github.com/GetOlympus/olympus-select-field/blob/master/LICENSE
+[license-blob]: https://github.com/GetOlympus/olympus-dionysos-field-select/blob/master/LICENSE
 [license-image]: https://img.shields.io/badge/license-MIT_License-blue.svg?style=flat-square
 [license-url]: http://opensource.org/licenses/MIT
-[packagist-image]: https://img.shields.io/packagist/v/getolympus/olympus-select-field.svg?style=flat-square
-[packagist-url]: https://packagist.org/packages/getolympus/olympus-select-field
+[packagist-image]: https://img.shields.io/packagist/v/getolympus/olympus-dionysos-field-select.svg?style=flat-square
+[packagist-url]: https://packagist.org/packages/getolympus/olympus-dionysos-field-select
 [twitter-image]: https://img.shields.io/badge/crewstyle-blue.svg?style=social&logo=twitter
-[twitter-url]: http://twitter.com/crewstyle
+[twitter-url]: https://twitter.com/crewstyle

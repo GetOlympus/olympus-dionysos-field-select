@@ -1,9 +1,9 @@
 {
-  "name": "getolympus/olympus-select-field",
+  "name": "getolympus/olympus-dionysos-field-select",
   "type": "olympus-field",
-  "description": "Select / Multiselect field, this component is a part of the Olympus Zeus Core framework.",
-  "keywords": ["olympus-zeus", "select", "field", "custom", "multiselect", "framework", "php", "wordpress"],
-  "homepage": "https://github.com/GetOlympus/olympus-select-field",
+  "description": "Select / Multiselect field, this component is a part of the Olympus Dionysos fields.",
+  "keywords": ["olympus", "dionysos", "select", "field", "custom", "multiselect", "framework", "php", "wordpress"],
+  "homepage": "https://github.com/GetOlympus/olympus-dionysos-field-select",
   "license": "MIT",
   "authors": [
     {
@@ -13,7 +13,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "GetOlympus\\Field\\": "src/Select/"
+      "GetOlympus\\Dionysos\\Field\\": "src/Select/"
     }
   },
   "extra": {

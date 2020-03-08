@@ -1,9 +1,8 @@
 <?php
 
-namespace GetOlympus\Field;
+namespace GetOlympus\Dionysos\Field;
 
 use GetOlympus\Zeus\Field\Field;
-use GetOlympus\Zeus\Utils\Translate;
 
 /**
  * Builds Select field.
@@ -35,15 +34,15 @@ class Select extends Field
     protected function getDefaults() : array
     {
         return [
-            'title' => Translate::t('select.title', $this->textdomain),
+            'title' => parent::t('select.title', $this->textdomain),
             'default' => '',
             'description' => '',
             'multiple' => false,
             'options' => [],
 
             // texts
-            't_keyboard' => Translate::t('select.keyboard', $this->textdomain),
-            't_no_options' => Translate::t('select.errors.no_options', $this->textdomain),
+            't_keyboard' => parent::t('select.keyboard', $this->textdomain),
+            't_no_options' => parent::t('select.errors.no_options', $this->textdomain),
         ];
     }
 
