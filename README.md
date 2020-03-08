@@ -164,7 +164,6 @@ Please, read [LICENSE][license-blob] for more information.
 <!-- links & imgs dfn's -->
 [olympus-image]: https://img.shields.io/badge/for-Olympus-44cc11.svg?style=flat-square
 [olympus-url]: https://github.com/GetOlympus
-[zeus-url]: https://github.com/GetOlympus/Zeus-Core
 [codefactor-image]: https://www.codefactor.io/repository/github/GetOlympus/olympus-dionysos-field-select/badge?style=flat-square
 [codefactor-url]: https://www.codefactor.io/repository/github/getolympus/olympus-dionysos-field-select
 [getoption-url]: https://developer.wordpress.org/reference/functions/get_option/
