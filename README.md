@@ -135,15 +135,15 @@ if (!empty($multiselect)) {
 
 ## Release History
 
+0.0.12
+- Change main css class
+
 0.0.11
 - New Olympus components compatibility
 - Change repository to be a part of Dionysos fields
 
 0.0.10
 - FIX: remove twig dependency from composer
-
-0.0.9
-- FIX: remove zeus-core dependency from composer
 
 ## Contributing
 
