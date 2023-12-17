@@ -34,14 +34,14 @@ class Select extends Field
     protected function getDefaults() : array
     {
         return [
-            'title' => parent::t('select.title', $this->textdomain),
-            'default' => '',
+            'title'       => parent::t('select.title', $this->textdomain),
+            'default'     => '',
             'description' => '',
-            'multiple' => false,
-            'options' => [],
+            'multiple'    => false,
+            'options'     => [],
 
             // texts
-            't_keyboard' => parent::t('select.keyboard', $this->textdomain),
+            't_keyboard'   => parent::t('select.keyboard', $this->textdomain),
             't_no_options' => parent::t('select.errors.no_options', $this->textdomain),
         ];
     }
