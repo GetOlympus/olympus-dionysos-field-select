@@ -1,4 +1,12 @@
+<img src="https://github.com/GetOlympus/olympus-dionysos-field-select/blob/master/assets/field-select.png" align="left" />
+
 # Dionysos Select Field
+
+[![Olympus Component][olympus-image]][olympus-url]
+[![CodeFactor Grade][codefactor-image]][codefactor-url]
+[![Packagist Version][packagist-image]][packagist-url]
+[![MIT][license-image]][license-blob]
+
 > This component is a part of the **Olympus Dionysos fields** for **WordPress**.  
 > It uses the default WordPress select or multiselect field.
 
@@ -8,16 +16,9 @@ composer require getolympus/olympus-dionysos-field-select
 
 ---
 
-[![Olympus Component][olympus-image]][olympus-url]
-[![CodeFactor Grade][codefactor-image]][codefactor-url]
-[![Packagist Version][packagist-image]][packagist-url]
-[![MIT][license-image]][license-blob]
+## Table of contents
 
----
-
-<p align="center">
-    <img src="https://github.com/GetOlympus/olympus-dionysos-field-select/blob/master/assets/field-select-64.png" />
-</p>
+[Field initialization](#field-initialization) • [Variables definition](#variables-definition) • [Texts definition](#texts-definition) • [Retrive data](#retrive-data) • [Release history](#release-history) • [Contributing](#contributing)
 
 ---
 
@@ -135,15 +136,11 @@ if (!empty($multiselect)) {
 
 ## Release History
 
-0.0.12
-- Change main css class
-
-0.0.11
-- New Olympus components compatibility
-- Change repository to be a part of Dionysos fields
-
-0.0.10
-- FIX: remove twig dependency from composer
+| Version | Note |
+| :------ | :--- |
+| 0.0.12  | Change main css class |
+| 0.0.11  | New Olympus components compatibility<br/>Change repository to be a part of Dionysos fields |
+| 0.0.10  | Remove twig dependency from composer |
 
 ## Contributing
 
